@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#262626">
+    <meta name="a.validate.01" content="61de175a6bd403818b606cb2c247579c099e" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://hentaiz.cc/wp-content/themes/ztube/assets/css/ui.css">
+    <link rel="stylesheet" href="https://hentaiz.cc/wp-content/themes/ztube/assets/css/style.css?ver=1.1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+    <link rel="icon" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icon.png" type="image/png">
+    <script>
+        const ajax = async formData => {
+            try {
+                const res = await fetch(
+                    'https://hentaiz.cc/wp-admin/admin-ajax.php', {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        body: formData
+                    }
+                );
+                const {
+                    success,
+                    data
+                } = await res.json();
+                if (!success) triggerAlert(data.error);
+                return data;
+            } catch (e) {
+                console.log(e.message);
+            }
+        }
+    </script>
+    <link rel="manifest" href="/superpwa-manifest.json">
+    <link rel="prefetch" href="/superpwa-manifest.json">
+    <meta name="theme-color" content="#302a2a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="HentaiZ">
+    <meta name="application-name" content="HentaiZ">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icons/192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icons/192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icons/512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icons/512.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1136x640.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_640x1136.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2688x1242.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1792x828.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1125x2436.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_828x1792.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2436x1125.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1242x2208.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2208x1242.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1334x750.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_750x1334.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2732x2048.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2048x2732.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2388x1668.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1668x2388.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2224x1668.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1242x2688.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1668x2224.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_1536x2048.png"
+    />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://hentaiz.cc/wp-content/uploads/superpwa-splashIcons/super_splash_screens/icon_2048x1536.png"
+    />
+    <title>Phim Hentai Vietsub - Xem Anime Sex Hay 18+ Không Che</title>
+    <meta name="description" content="Trang web xem phim sex anime hentai vietsub miễn phí chất lượng cao lớn nhất VN. Tải phim hoạt hình người lớn 18+ Full HD Không Che/Uncensored cực nét"
+    />
+    <meta name="robots" content="follow, index" />
+    <link rel="canonical" href="https://hentaiz.cc/">
+    <link rel="next" href="https://hentaiz.cc/page/2/">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Phim Anime Mèo Đen">
+    <meta property="og:description" content="Trang web xem phim sex anime hentai vietsub miễn phí chất lượng cao lớn nhất VN. Tải phim hoạt hình người lớn 18+ Full HD Không Che/Uncensored cực nét">
+    <meta property="og:url" content="https://hentaiz.cc/">
+    <meta property="og:site_name" content="Phim Hentai Vietsub - Xem Anime Sex Hay 18+ Không che">
+    <meta property="og:image" content="https://hentaiz.cc/wp-content/uploads/2021/04/512.png">
+    <meta property="og:image:secure_url" content="https://hentaiz.cc/wp-content/uploads/2021/04/512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="mèo đen">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Phim Anime Mèo Đen">
+    <meta name="twitter:description" content="Trang web xem phim sex anime hentai vietsub miễn phí chất lượng cao lớn nhất VN. Tải phim hoạt hình người lớn 18+ Full HD Không Che/Uncensored cực nét">
+    <meta name="twitter:image" content="https://hentaiz.cc/wp-content/uploads/2021/04/512.png">
+    <script type="application/ld+json" class="rank-math-schema-pro">
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "Person",
+                "@id": "https://hentaiz.cc/#person",
+                "name": "adminx",
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "https://hentaiz.cc/#logo",
+                    "url": "https://hentaiz.cc/wp-content/uploads/2021/04/512.png",
+                    "caption": "adminx",
+                    "inLanguage": "vi",
+                    "width": "512",
+                    "height": "512"
+                }
+            }, {
+                "@type": "WebSite",
+                "@id": "https://hentaiz.cc/#website",
+                "url": "https://hentaiz.cc",
+                "name": "adminx",
+                "publisher": {
+                    "@id": "https://hentaiz.cc/#person"
+                },
+                "inLanguage": "vi",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://hentaiz.cc/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }, {
+                "@type": "CollectionPage",
+                "@id": "https://hentaiz.cc/#webpage",
+                "url": "https://hentaiz.cc/",
+                "name": "Phim Hentai Vietsub - Xem Anime Sex Hay 18+ Kh\u00f4ng Che",
+                "about": {
+                    "@id": "https://hentaiz.cc/#person"
+                },
+                "isPartOf": {
+                    "@id": "https://hentaiz.cc/#website"
+                },
+                "inLanguage": "vi"
+            }]
+        }
+    </script>
+    <meta name="google-site-verification" content="iQyfrMxxhwdoEnEIIvsK70LQJiqyQtE6QIXIQomixsM">
+    <link rel='dns-prefetch' href='//s.w.org'>
+    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Phim Hentai Vietsub - Xem Anime Sex Hay 18+ Không che &raquo;" href="https://hentaiz.cc/feed/">
+    <link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Phim Hentai Vietsub - Xem Anime Sex Hay 18+ Không che &raquo;" href="https://hentaiz.cc/comments/feed/">
+    <link rel='stylesheet' id='wp-block-library-css' href='https://hentaiz.cc/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' media='all'>
+    <style id='global-styles-inline-css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important
+        }
+    </style>
+    <link rel="https://api.w.org/" href="https://hentaiz.cc/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hentaiz.cc/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://hentaiz.cc/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 5.9.3">
+</head>
+
+<body class="home blog bg-dark text-light font-weight-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627"><feFuncG type="table" tableValues="0 0.49803921568627"><feFuncB type="table" tableValues="0 0.49803921568627"><feFuncA type="table" tableValues="1 1"></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></filter></defs></svg>
+    <svg
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+                    <feComponentTransfer color-interpolation-filters="sRGB">
+                        <feFuncR type="table" tableValues="0 1">
+                            <feFuncG type="table" tableValues="0 1">
+                                <feFuncB type="table" tableValues="0 1">
+                                    <feFuncA type="table" tableValues="1 1">
+                    </feComponentTransfer>
+                    <feComposite in2="SourceGraphic" operator="in">
+            </filter>
+        </defs>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765"><feFuncG type="table" tableValues="0 1"><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431"><feFuncA type="table" tableValues="1 1"></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></filter></defs></svg>
+        <svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+            <defs>
+                <filter id="wp-duotone-blue-red">
+                    <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0 1">
+                                <feFuncG type="table" tableValues="0 0.27843137254902">
+                                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902">
+                                        <feFuncA type="table" tableValues="1 1">
+                        </feComponentTransfer>
+                        <feComposite in2="SourceGraphic" operator="in">
+                </filter>
+            </defs>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0"><feFuncG type="table" tableValues="0 0.64705882352941"><feFuncB type="table" tableValues="0 1"><feFuncA type="table" tableValues="1 1"></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></filter></defs></svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+                <defs>
+                    <filter id="wp-duotone-magenta-yellow">
+                        <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+                            <feComponentTransfer color-interpolation-filters="sRGB">
+                                <feFuncR type="table" tableValues="0.78039215686275 1">
+                                    <feFuncG type="table" tableValues="0 0.94901960784314">
+                                        <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412">
+                                            <feFuncA type="table" tableValues="1 1">
+                            </feComponentTransfer>
+                            <feComposite in2="SourceGraphic" operator="in">
+                    </filter>
+                </defs>
+                </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745"><feFuncG type="table" tableValues="0 1"><feFuncB type="table" tableValues="0.44705882352941 0.4"><feFuncA type="table" tableValues="1 1"></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></filter></defs></svg>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+                    <defs>
+                        <filter id="wp-duotone-blue-orange">
+                            <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+                                <feComponentTransfer color-interpolation-filters="sRGB">
+                                    <feFuncR type="table" tableValues="0.098039215686275 1">
+                                        <feFuncG type="table" tableValues="0 0.66274509803922">
+                                            <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725">
+                                                <feFuncA type="table" tableValues="1 1">
+                                </feComponentTransfer>
+                                <feComposite in2="SourceGraphic" operator="in">
+                        </filter>
+                    </defs>
+                    </svg>
+                    <header>
+                        <div class="sidenav bg-dark" id="sidenav" data-accordion="true" data-color="light" data-hidden="true" role="navigation">
+                            <div class="text-center py-2"> <a href="https://hentaiz.cc"> <img class="img-fluid rounded w-75" src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/logo.png" alt="Phim Hentai Vietsub &#8211; Xem Anime Sex Hay 18+ Không che"> </a> </div>
+                            <hr class="my-1">
+                            <div>
+                                <ul class="sidenav-menu">
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc"> <i class="fas fa-fw fa-home mr-3"></i><span>Trang chủ</span> </a> </li>
+                                    <li class="sidenav-item"> <span class="sidenav-link"> <i class="fas fa-list-ul fa-fw mr-3"></i> <span>Thể loại</span> </span>
+                                        <ul class="sidenav-collapse">
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/3d/" title="Hoạt hình 3D chân thật hơn, giống thật mà không phải là thật!">3D </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/ahegao/" title="Khi cô gái làm tính quá phê? Mắt trợn ngược, lè lưỡi cảm nhận!">Ahegao </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/anal/" title="Thông đít cũng thích đấy, hy vọng người bị thông là con gái">Anal </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/bdsm/" title="BDSM: B: Trói buộc, D: Thống Trị, S: Quy Phục, M: Khổ Dâm">BDSM </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/big-boobs/" title="Vú To! Gái còn thích chứ đừng nói đến trai ;)">Big Boobs </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/blow-job/" title="Khi cô gái sử dụng hết 100% công dụng của cái mồm để 'Thổi Kèn'">Blow Job </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/bondage/" title="Trói Buộc! Nghệ thuật của những sợi dây">Bondage </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/boob-job/" title="Bánh mì kẹp 'xúc xích' nóng, thứ mà ngực lép không thể làm!">Boob Job </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/cosplay/" title="">Cosplay </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/dark-skin/" title="Cô gái da đen, da rắm nắng... cũng có sức cuốn hút riêng đó">Dark Skin </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/demon/" title="">Demon </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/double-penetration/" title="Một lỗ vẫn chưa phê, vậy chơi hai lỗ (đít) cùng lúc thì sao nhỉ?">Double Penetration </a> </li>
+                                            <li class="sidenav-item">
+                                            <a class="sidenav-link" href="https://hentaiz.cc/category/do-boi/" title="Hentai thể loại gái địt nhau khi mặc đồ bơi (swimming suit)">Đồ Bơi </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/elf/" title="Elf: Cô gái khác loài có tai dài... Giống như tiên vậy!">Elf </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/fantasy/" title="">Fantasy </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/femdom/" title="Một cô gái chủ động, đôi khi gọi là nữ bạo dâm">Femdom </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/foot-job/" title="Một đôi chân đẹp cũng đủ làm bạn RA">Foot Job </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/futanari/" title="Cú Có Gai, những cô gái đó có thể lấy con cu 30cm quật chết bạn">Futanari </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/gang-bang/" title="Nhiều nam 'chăm sóc' một nữ hay nhiều nữ 'chăm sóc' một nam đều vui phải không?">Gang Bang </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/gender-bender/" title="Gái bị biến thành trai hoặc ngược lại nhưng tâm trí không thay đổi">Gender Bender </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/guro/" title="Rùng rợn, ma quái, máu me... Nghe có vẻ như đang xem Conan ấy nhỉ?">Guro </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/hai-huoc/" title="Dù đang Fap nhưng tôi vẫn cười như một đứa điên">Hài Hước </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/harem/" title="Chào mừng đến với dàn hậu cung của nam chính!">Harem </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/idol/" title="">Idol </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/josei/" title="">Josei </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/kemonomimi/" title="Tai thú, vâng cô ấy nhìn đáng yêu như thú cưng vậy!">Kemonomimi </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/lactation/" title="Những bộ ngực có sữa! Ôi mùi sữa mẹ vẫn thoang thoảng đâu đây">Lactation </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/loan-luan/" title="Họ chỉ muốn gắn kết tình cảm ruột thịt thôi mà">Loạn luân </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/loli/" title="Bùm Bùm Bùm FBI Open Up! Tôi thề là cô ấy nói mình đã đủ 18">Loli </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/magical-girl/" title="">Magical Girl </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/maid/" title="Hầu gái: Chào mừng cậu chủ đã về! Ôi cái bộ trang phục dễ thương ấy">Maid </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/manga/" title="">Manga </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/megane/" title="Gái đeo kính. Vâng bị cân là do học nhiều chứ không phải do xem sex">Megane </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/milf/" title="Phụ nữ đứng tuổi có sức hút riêng đó, họ khá là Múp!">MILF </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/mind-break/" title="Làm mất trí hoặc tẩy não, biến gái ngoan thành 'gái hư'">Mind Break </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/mind-control/" title="Điều khiển tâm trí kẻ khác, thứ mà ai cũng muốn!">Mind Control </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/monster/" title="Quái vật, ma quỷ, người ngoài hành tinh... Chúng có con ciu khá to!">Monster </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/monster-girl/" title="">Monster Girl </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/ntr/" title="Câu chuyện của những chiếc sừng, dù sao nó vẫn giúp phát triển chiều cao">NTR </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/orgy/" title="Thác loạn, cuộc vui không chỉ có 1 đôi">Orgy </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/plot/" title="Hentai không chỉ là địt nhau, mà còn có cả nội dung, cốt truyện!">Plot </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/pregnant/" title="Có thai! Ôi cái bụng to quá :v">Pregnant </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/rape/" title="Cưỡng Bức, gái càng chống cự, đàn ông càng thích!">Rape </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/romance/" title="Lãng mạn đến 'chảy nước'">Romance </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/scat/" title="Oh shit! Dù sao phân cũng tốt cho cây">Scat </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/school-girl/" title="Nữ sinh. Đúng vậy, cô ấy cần được giáo dục giới tính khi trên ghế nhà trường">School Girl </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/sci-fi/" title="">Sci-Fi </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/sex-toy/" title="Đồ chơi tình dục là thứ thiết yếu trong thời đại công nghệ 4.0">Sex Toy </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/shota/" title="Teemo có câu: Kích thước không phải là tất cả!">Shota </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/slice-of-life/" title="">Slice of Life </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/softcore/" title="">Softcore </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/stocking/" title="Quần tất! Nhìn thôi cũng thấy nứng rồi">Stocking </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/succubus/" title="">Succubus </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/supernatural/" title="">Supernatural </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/teacher/" title="Giáo viên, thực ra họ đang dạy giáo dục giới tính thôi mà">Teacher </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/tentacle/" title="Những chiếc vòi, xúc tu... Mặc dù không phải đang ăn BBQ hải sản">Tentacle </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/threesome/" title="Một người khỏe 2 người vui">Threesome </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/thu-dam/" title="">Thủ Dâm </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/trap/" title="Giả gái, thứ mà con trai hơn con gái ở khoản cosplay">Trap </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/tsundere/" title="Đồ ngốc, tôi chưa có phép thì đừng có nhét vào đột ngột như thế">Tsundere </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/twin/" title="">Twin </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/ugly-bastard/" title="Dù là tên khốn xấu xí nhưng bù lại có con cặc TO">Ugly Bastard </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/vanilla/" title="Tình dục nhẹ nhàng, sao cứ như xem phim gia đình vậy?">Vanilla </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/virgin/" title="Gái trinh, đứa con trai nào cũng muốn phá một lần trong đời">Virgin </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/y-ta/" title="Chăm sóc sức khỏe bệnh nhân kiêm luôn cả sức khỏe của con ciu">Y Tá </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/yaoi/" title="Hồi bé con trai thích 'đấu kiếm' với nhau">Yaoi </a> </li>
+                                            <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/category/yuri/" title="Mấy cô đang làm gì vậy? Cho tôi tham gia với!!!">Yuri </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sidenav-item"> <span class="sidenav-link"> <i class="fas fa-list-ul fa-fw mr-3"></i> <span>Hưởng NTR :))</span> </span>
+                                    <li class="sidenav-item"> <span class="sidenav-link"> <i class="fas fa-list-ul fa-fw mr-3"></i> <span>Hưởng Loli :V</span> </span>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/?s=&sort=meta_value_num:desc:x_post_views_count"> <i class="fas fa-fw fa-fire mr-3"></i><span>Top lượt xem</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/censored"> <i class="fas fa-fw fa-eye-slash mr-3"></i><span>Có che</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/uncensored"> <i class="fas fa-fw fa-eye mr-3"></i><span>Không che</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/hentai-3d"> <i class="far fa-fw fa-play-circle mr-3"></i><span>Hentai 3D</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/random?t=1651182103"> <i class="fas fa-fw fa-random mr-3"></i><span>Random</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/trailer"> <i class="fas fa-fw fa-video-slash mr-3"></i><span>Trailer</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/?s"> <i class="fas fa-fw fa-search mr-3"></i><span>Tìm kiếm</span> </a> </li>
+                                </ul>
+                                <hr class="my-1">
+                                <ul class="sidenav-menu">
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="https://hentaiz.cc/gallery?channels[]=616616204781617152"> <i class="fas fa-fw fa-images mr-3"></i><span>Bộ sưu tập</span> </a> </li>
+                                </ul>
+                                <hr class="my-1">
+                                <ul class="sidenav-menu">
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/sign-in?r=https%3A%2F%2Fhentaiz.cc%2F"> <i class="fas fa-fw fa-sign-in-alt mr-3"></i><span>Đăng nhập</span> </a> </li>
+                                    <li class="sidenav-item"> <a class="sidenav-link" href="/sign-up"> <i class="fas fa-fw fa-user-plus mr-3"></i><span>Đăng ký</span> </a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-expand navbar-dark shadow-1-strong">
+                            <div class="container-fluid">
+                                <div class="d-flex align-items-center"> <button class="btn btn-dark btn-floating shadow-0 mr-2" type="button" data-toggle="sidenav" data-target="#sidenav" aria-label="Menu" aria-controls="sidenav" aria-haspopup="true"> <i class="fas fa-bars"></i> </button>
+                                    <a
+                                        class="navbar-brand" href="https://hentaiz.cc">
+                                        <h1 class="h6 mb-0">HentaiZ-V2</h1>
+                                        </a> <span class="small text-white-50 pl-3 border-left border-black d-none d-md-inline-block"> Trang chủ </span> </div>
+                                <form id="live" class="form-outline autocomplete-input form-white w-50" action="https://hentaiz.cc">
+                                <input class="form-control" id="search" name="s" type="search" placeholder="Tên phim..."> <label class="form-label" for="search">Tìm kiếm</label> </form>
+                                <ul class="navbar-nav d-none d-lg-flex align-items-center">
+                                    <li class="nav-item"> <a class="nav-link ripple mr-2" href="/sign-in?r=https%3A%2F%2Fhentaiz.cc%2F" data-ripple-color="light"> <i class="fas fa-sign-in-alt mr-2"></i><span>Đăng nhập</span> </a> </li>
+                                    <li class="nav-item"> <a class="nav-link ripple" href="/sign-up" data-ripple-color="light"> <i class="fas fa-user-plus mr-2"></i><span>Tạo tài khoản</span> </a> </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+                    <div class="position-relative mt-2" style="background-color: rgba(0, 0, 0, 0.1); z-index: 500">
+                        <div class=" text-center">
+                            <div class=""> </div>
+                            <div class=""> </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid py-3">
+                        <div class="d-flex flex-column">
+                            <p class="note note-info text-dark">Tên miền chính hentaiz.cc - Nếu không xem được phim hãy thử xem bằng chế độ ẩn danh hoặc xóa lịch sử & cookies</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div class="d-flex flex-column">
+                                <h2 class="h3 font-weight-light mb-0">Hentai Mới Nhất</h2> <span class="small text-white-50"> 16 giờ trước </span> </div> <a class="btn btn-outline-light d-none d-md-block" href="/hentai-vietsub/">Tất cả </a> </div>
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6 row-cols-xxl-12 g-2 mb-3 text-center videos">
+                            <div class="col text-center" data-id="7208">
+                                <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/3-byougo-Yajuu-1.jpg" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 4">
+                                    <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                    <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/4.png" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 4" style="max-height:15%"> </div>
+                                    <div class="card-body px-0 py-1">
+                                        <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/3-byougo-yajuu-goukon-de-sumi-ni-ita-kare-wa-midara-nikushoku-deshita-4/">3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 4 </a>                                            </h3>
+                                        <div class="text-truncate text-white-50 font-weight-normal small">Suiseisha </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center" data-id="7207">
+                                <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/3-byougo-Yajuu-1.jpg" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 3">
+                                    <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                    <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/3.png" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 3" style="max-height:15%"> </div>
+                                    <div class="card-body px-0 py-1">
+                                        <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/3-byougo-yajuu-goukon-de-sumi-ni-ita-kare-wa-midara-nikushoku-deshita-2-2/">3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 3 </a>                                            </h3>
+                                        <div class="text-truncate text-white-50 font-weight-normal small">Suiseisha </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center" data-id="3227">
+                                <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Front-Innocent-Mou-Hitotsu-no-Lady-Innocent.jpg" alt="Front Innocent Mou Hitotsu no Lady Innocent 1">
+                                    <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                    <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Front Innocent Mou Hitotsu no Lady Innocent 1" style="max-height:15%"> </div>
+                                    <div class="card-body px-0 py-1">
+                                        <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/front-innocent-mou-hitotsu-no-lady-innocent-1/">Front Innocent Mou Hitotsu no Lady Innocent 1 </a> </h3>
+                                        <div class="text-truncate text-white-50 font-weight-normal small">Arms, Media Blasters </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center" data-id="7205">
+                                <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Otaku-ni-Yasashii-Gal-toka-Kyonyuu-no-Osananajimi-toka-1.jpg" alt="Otaku ni Yasashii Gal toka Kyonyuu no Osananajimi toka 1">
+                                    <div class="card-img-overlay d-flex justify-content-end">
+                                    </div>
+                                    <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Otaku ni Yasashii Gal toka Kyonyuu no Osananajimi toka 1" style="max-height:15%"> </div>
+                                    <div class="card-body px-0 py-1">
+                                        <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="./index2.html">Hưởng NTR :))</a> </h3>
+                                        <div
+                                            class="text-truncate text-white-50 font-weight-normal small">CHIEN-IT</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="3245">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Renketsu-Houshiki-3.jpg" alt="Renketsu Houshiki 3">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/3.png" alt="Renketsu Houshiki 3" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/renketsu-houshiki-3/">Renketsu Houshiki 3 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Suzuki Mirano </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="3244">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Renketsu-Houshiki-2.jpg" alt="Renketsu Houshiki 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Renketsu Houshiki 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/renketsu-houshiki-2/">Renketsu Houshiki 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Suzuki Mirano </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="3243">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Renketsu-Houshiki-1.jpg" alt="Renketsu Houshiki 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Renketsu Houshiki 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/renketsu-houshiki-1/">Renketsu Houshiki 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Suzuki Mirano </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7201">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/3-byougo-Yajuu-1.jpg" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/3-byougo-yajuu-goukon-de-sumi-ni-ita-kare-wa-midara-nikushoku-deshita-2/">3-byougo Yajuu Goukon de Sumi ni Ita Kare wa Midara Nikushoku deshita 2 </a>                                        </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Suiseisha </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7196">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Anehame-Ore-no-Hatsukoi-ga-Jisshi-na-Wake-ga-Nai-2.jpg" alt="Anehame Ore no Hatsukoi ga Jisshi na Wake ga Nai 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Anehame Ore no Hatsukoi ga Jisshi na Wake ga Nai 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/anehame-ore-no-hatsukoi-ga-jisshi-na-wake-ga-nai-2/">Anehame Ore no Hatsukoi ga Jisshi na Wake ga Nai 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Mary Jane </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7195">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Yamitsuki-Mura-Melty-Limit-The-Animation-1.jpg" alt="Yamitsuki Mura Melty Limit The Animation 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Yamitsuki Mura Melty Limit The Animation 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/yamitsuki-mura-melty-limit-the-animation-1/">Yamitsuki Mura Melty Limit The Animation 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Showten </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7142">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Inkou-Kyoushi-no-Saimin-Seikatsu-Shidouroku-2.jpg" alt="Inkou Kyoushi no Saimin Seikatsu Shidouroku 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Inkou Kyoushi no Saimin Seikatsu Shidouroku 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/inkou-kyoushi-no-saimin-seikatsu-shidouroku-2/">Inkou Kyoushi no Saimin Seikatsu Shidouroku 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Antechinus </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7141">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Inkou-Kyoushi-no-Saimin-Seikatsu-Shidouroku-1.jpg" alt="Inkou Kyoushi no Saimin Seikatsu Shidouroku 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Inkou Kyoushi no Saimin Seikatsu Shidouroku 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/inkou-kyoushi-no-saimin-seikatsu-shidouroku-1/">Inkou Kyoushi no Saimin Seikatsu Shidouroku 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Antechinus </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-block d-md-none mt-3 mb-3"> <a class="btn btn-block btn-outline-light" href="/hentai-vietsub/">Xem tất cả </a> </div>
+                    <div class="position-relative mb-2" style="background-color: rgba(0, 0, 0, 0.1); z-index: 500">
+                        <div class=" text-center">
+                            <div class=""> </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="https://hentaiz.cc/gallery?channels[]=616616204781617152">
+                            <picture>
+                                <source media="(min-width: 992px)" srcset="https://hentaiz.cc/wp-content/themes/ztube/assets/images/gallery-desktop.jpg">
+                                <source media="(max-width: 992px)" srcset="https://hentaiz.cc/wp-content/themes/ztube/assets/images/gallery-mobile.jpg"> <img class="img-fluid" src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/gallery-desktop.jpg" alt="HentaiZ Gallery"> </picture>
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex flex-column">
+                            <h2 class="h3 font-weight-light mb-0">Hentai 3D</h2> <span class="small text-white-50"> 14 ngày trước </span> </div> <a class="btn btn-outline-light d-none d-md-block" href="/?sort=&#038;s=&#038;categories%5B%5D=773">Tất cả </a> </div>
+                    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6 row-cols-xxl-12 g-2 mb-3 text-center videos">
+                        <div class="col text-center" data-id="7200">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/mia-4.jpg" alt="Mia Episode 4">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/4.png" alt="Mia Episode 4" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/mia-episode-4/">Mia Episode 4 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7199">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/mia-3.jpg" alt="Mia Episode 3">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/3.png" alt="Mia Episode 3" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/mia-episode-3/">Mia Episode 3 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7198">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/mia-2.jpg" alt="Mia Episode 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Mia Episode 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/mia-episode-2/">Mia Episode 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7197">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/mia-1.jpg" alt="Mia Episode 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Mia Episode 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/mia-episode-1/">Mia Episode 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7188">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/yuna-3.jpg" alt="Yuna 3">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/3.png" alt="Yuna 3" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/yuna-3/">Yuna 3 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7186">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/yuna-2.jpg" alt="Yuna 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Yuna 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/yuna-2/">Yuna 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7181">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/yuna-1.jpg" alt="Yuna 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Yuna 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/yuna-episode-1/">Yuna 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7178">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Opiumud-039-Outdoors-hell-Knight.jpg" alt="Opiumud-039 Outdoor&#8217;s hell Knight 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Opiumud-039 Outdoor&#8217;s hell Knight 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/opiumud-039-outdoors-hell-knight-1/">Opiumud-039 Outdoor&#8217;s hell Knight 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">opiumud </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7115">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/maya-2.jpg" alt="Maya Episode 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Maya Episode 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/maya-episode-2/">Maya Episode 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7114">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/maya-1.jpg" alt="Maya Episode 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Maya Episode 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/maya-episode-1/">Maya Episode 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7113">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/jane-2.jpg" alt="Jane Episode 2">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Jane Episode 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/jane-episode-2/">Jane Episode 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7112">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/jane-1.jpg" alt="Jane Episode 1">
+                                <div class="card-img-overlay d-flex justify-content-end"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Jane Episode 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/jane-episode-1/">Jane Episode 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Doberman Studio </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-block d-md-none mt-3 mb-3"> <a class="btn btn-block btn-outline-light" href="/?sort=&#038;s=&#038;categories%5B%5D=773">Xem tất cả </a> </div>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex flex-column">
+                            <h2 class="h3 font-weight-light mb-0">Trailer</h2> <span class="small text-white-50"> 2 tháng trước </span> </div> <a class="btn btn-outline-light d-none d-md-block" href="/trailer">Tất cả </a> </div>
+                    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-6 row-cols-xxl-12 g-2 mb-3 text-center videos">
+                        <div class="col text-center" data-id="7140">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Isekai-Yarisaa-2.jpg" alt="Isekai Yarisaa 2">
+                                <div class="card-img-overlay d-flex justify-content-center align-items-center"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/trailer.png" alt="Isekai Yarisaa 2" style="max-height:9%"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/2.png" alt="Isekai Yarisaa 2" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/isekai-yarisaa-2/">Isekai Yarisaa 2 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Antechinus </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center" data-id="7139">
+                            <div class="card bg-dark h-100 hover-shadow"> <img class="card-img rounded" src="/images/thumb/Isekai-Yarisaa-1.jpg" alt="Isekai Yarisaa 1">
+                                <div class="card-img-overlay d-flex justify-content-center align-items-center"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/trailer.png" alt="Isekai Yarisaa 1" style="max-height:9%"> </div>
+                                <div class="card-img-overlay d-flex justify-content-end align-items-end mb-5"> <img src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/episodes/1.png" alt="Isekai Yarisaa 1" style="max-height:15%"> </div>
+                                <div class="card-body px-0 py-1">
+                                    <h3 class="card-title h6 text-truncate mb-0"> <a class="stretched-link link-light font-weight-light" href="https://hentaiz.cc/isekai-yarisaa-1/">Isekai Yarisaa 1 </a> </h3>
+                                    <div class="text-truncate text-white-50 font-weight-normal small">Antechinus </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-block d-md-none mt-3 mb-3"> <a class="btn btn-block btn-outline-light" href="/trailer">Tất cả Trailer </a> </div>
+                    </div>
+                    <footer class="text-white text-center text-lg-left shadow-1-strong position-relative" style="background-color: #202020; z-index: 1000;">
+                        <div class="container p-5">
+                            <div class="row">
+                                <div class="col-12 col-lg-2 mb-5 mb-lg-0"> <a href="https://hentaiz.cc"> <img class="img-fluid" src="https://hentaiz.cc/wp-content/themes/ztube/assets/images/icon.png" alt="HentaiZ" width="69"> </a>
+                                    <p class="d-none">Trang web xem phim sex anime hentai vietsub miễn phí chất lượng cao lớn nhất VN. Tải phim hoạt hình người lớn 18+ Full HD Không Che/Uncensored cực nét</p>
+                                </div>
+                                <div class="col-12 col-lg-10">
+                                    <div class="row row-cols-2 row-cols-lg-4">
+                                        <div class="col"> <strong class="font-weight-bold">hentaiz<span class="text-warning">.</span>top</strong>
+                                            <ul class="list-unstyled mb-5 mb-lg-0">
+                                                <li class="mt-3"> <a class="link-light" href="https://hentaiz.cc"> <span class="small">Trang chủ</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="/?s=&sort=meta_value_num:desc:x_post_views_count"> <span class="small">Top lượt xem</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://hentaiz.vip/?page_id=3598"> <span class="small">Có che</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="/uncensored"> <span class="small">Không che</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="/hentai-vietsub/"> <span class="small">Hentai Mới Nhất</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://hentaiz.vip/?page_id=3596"> <span class="small">Hentai 3D</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="/random?t=1651182103"> <span class="small">Random</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://hentaiz.vip/?page_id=3592"> <span class="small">Trailer</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="/?s"> <span class="small">Tìm kiếm</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://hentaiz.cc/gallery?channels[]=616616204781617152"> <span class="small">Bộ sưu tập</span> </a> </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col"> <strong class="font-weight-bold">Đối tác</strong>
+                                            <ul class="list-unstyled mb-lg-0">
+                                                <li class="mt-3"> <a class="link-light" href="https://javx.to" target="_blank" rel="noopener noreferrer"> <span class="small">JAVX</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://kimochi.info" target="_blank" rel="noopener noreferrer"> <span class="small">Kimochi Gaming</span> </a> </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col"> <strong class="font-weight-bold">Tài nguyên</strong>
+                                            <ul class="list-unstyled mb-lg-0">
+                                                <li class="mt-3"> <a class="link-light" href="/terms-of-use/" target="_blank" rel="noopener noreferrer"> <span class="small">Điều Khoản Sử Dụng</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://premid.app/store/presences/HentaiZ" target="_blank" rel="noopener noreferrer"> <span class="small">HentaiZ Presence</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light" href="https://moe.club/saucemoe" target="_blank" rel="noopener noreferrer"> <span class="small">Sauce Finder</span> </a> </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col"> <strong class="font-weight-bold">Liên hệ</strong>
+                                            <ul class="list-unstyled mb-lg-0">
+                                                <li class="mt-3"> <a class="link-light small" href="/cdn-cgi/l/email-protection#4726232a2e29072f222933262e3d69292233" target="_blank" rel="noopener noreferrer"> <i class="fas fa-envelope fa-fw mr-1"></i> <span>Email</span> </a>                                                    </li>
+                                                <li class="mt-3"> <a class="link-light small" href="https://discord.gg/wSe5mBMaMH" target="_blank" rel="noopener noreferrer"> <i class="fab fa-discord fa-fw mr-1"></i> <span>Discord</span> </a> </li>
+                                                <li class="mt-3"> <a class="link-light small" href="https://t.me/minachi1386" target="_blank" rel="noopener noreferrer"> <i class="fab fa-telegram fa-fw mr-1"></i> <span>Telegram</span> </a> </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center px-1 py-3" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <p class="small text-white-50 mb-0">Giao diện được thiết kế bởi <a class="link-light" href="https://hentaiz.cc">HentaiZ</a> </p>
+                            <p class="small text-white-50 mb-0">Mọi ý kiến đóng góp vui lòng liên hệ <kbd><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6607020b0f08260e030812070f1c48080312">[email&#160;protected]</a></kbd> </p>
+                        </div>
+                        <div class="alert fade" id="alert-popup" role="alert" data-color="dark" data-position="bottom-right" data-stacking="true" data-append-to-body="true" data-hidden="true" data-autohide="true" data-delay="5000"></div>
+                    </footer>
+                    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script defer src="https://hentaiz.cc/wp-content/themes/ztube/assets/js/ui.js"></script>
+                    <script defer src="https://hentaiz.cc/wp-content/themes/ztube/assets/js/script.js"></script>
+                    <script data-cfasync="false" src="//kw3y5otoeuniv7e9rsi.com/aas/r45d/vki/1861581/16075471.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156679749-4"></script>
+                    <script>
+                        window.dataLayer = window.dataLayer || [];
+
+                        function gtag() {
+                            dataLayer.push(arguments);
+                        }
+                        gtag('js', new Date());
+                        gtag('config', 'UA-156679749-3');
+                    </script>
+                    <script id='superpwa-register-sw-js-extra'>
+                        var superpwa_sw = {
+                            "url": "\/superpwa-sw.js",
+                            "disable_addtohome": "0",
+                            "enableOnDesktop": ""
+                        };
+                    </script>
+                    <script src='https://hentaiz.cc/wp-content/plugins/super-progressive-web-apps/public/js/register-sw.js' id='superpwa-register-sw-js'></script>
+                    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+                        data-cf-beacon='{"rayId":"70308f776bf9250c","token":"a4765d71c6f04259abd3787eb64a96ef","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+
+</html>

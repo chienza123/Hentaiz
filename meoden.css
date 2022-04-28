@@ -1,0 +1,295 @@
+.navbar__baka {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+}
+.navbar__border{
+  width: 100%;
+  height:7px;
+  background-image:linear-gradient( to bottom,black,rgba(1,1,1,0%) );
+  position: relative;
+  bottom:7px;
+}
+body {
+  background-color: #262626;
+}
+.navbar__Iitem {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Source Sans 3', sans-serif;
+  color:white
+}
+.left {
+  display:flex;
+  justify-content:space-around;;
+}
+.right {
+    display:flex;
+  justify-content:space-around;
+  opacity:60%;
+  position: relative;
+  right:40px;
+}
+.gg input {
+  background-color: #262626;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 20px;
+  padding: 5.28px 12px;
+  border-style: solid;
+  border-color: rgb(236, 127, 127)36, 127, 127);
+  border-width: 2px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+}
+.tc {
+opacity: 60%;
+padding-left: -50px;
+}
+.tcc{
+  padding-right:40px;
+  border-right: 1px solid black ;
+}
+.kuro{
+  margin-right: -23px ;
+}
+.text:hover{
+  color:rgba(255, 255, 255, 90%)
+}
+.two{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Source Sans 3', sans-serif;
+  position: relative;
+ top: 9px
+}
+.thongbao{
+  width: 1260px;
+  height: 45px;
+  display: flex;
+  position: relative;
+  top: 10px;
+  background-color: aliceblue;
+  right: -41px;
+  border: 1px solid ;
+  border-radius: 8px;
+
+}
+.thongbaos{
+  background-color: #0dcaf0;
+  width: 7px;
+  height: 45px;
+  border-left: 0px 0px 0px 1px solid ;
+  border-radius: 8px 0px 0px 8px;
+}
+.__thongbao{
+  display: flex;
+  position: relative;
+  left:-20px;
+  top: -9px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  color: rgba(1, 1, 1, 60%);
+}
+.new{
+  font-size: 20px;
+  position: relative;
+  font-size: 30px;
+}
+.new2{
+  position: relative;
+  top: -4px;
+  right:-2.5px;
+  color: rgba(255, 255, 255, 70%);
+}
+.all {
+position: relative;
+left: -50px;
+padding:6px 20px;
+border:1px solid white;
+border-radius: 5px;
+font-size: 13px;
+}
+.cards{
+display: flex;
+justify-content: space-around;
+width: 95%;
+margin:2px auto;
+}
+.card {
+width: 15%;
+height: 330px;
+/* border: 1px solid white ; */
+position: relative;
+
+}
+.card img {
+  width: 100%;
+  height: 86%;
+  position: absolute;
+  border-radius: 10px;
+}
+.joshikousei{
+  position: relative;
+  text-align: center;
+}
+.mila{
+  position: relative;
+  text-align: center;
+}
+.kage{
+  position: relative;
+  text-align: center;
+}
+.Pico{
+  position: relative;
+  text-align: center;
+}
+.harem{
+  position: relative;
+  text-align: center;
+}
+.card h5{
+  color:white;
+  position: absolute;
+bottom: 2px;
+left: 52%;
+transform: translateX(-50%);
+width: 100%;
+font-family: 'Source Sans 3', sans-serif;
+
+}
+.card p{
+  color:rgba(255, 255, 255, 0.699);
+position: relative;
+top: 285px;
+left: 47px;
+}
+.footerz{
+position: relative;
+bottom:-50px;
+width: 100%;
+height: auto;
+background-color: #202020;
+}
+.footer{
+  width: 90%;
+  height: 600px;
+  margin:0 auto;
+  position: relative;
+  top: 20px;
+
+}
+
+.footer__fex{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+  color: white;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+}
+.imgs img {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  bottom:-28px;
+  left:50px
+}
+/* .icons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;;
+  color: white;
+  position: absolute;
+  height: 110px;
+  bottom: 100px;
+  top: 965px;
+  left: 1100px;
+} */
+.ic1{
+display: flex;
+align-items: center;
+position: relative;
+top:15px;
+right:-15px
+}
+.ic2{
+display: flex;
+align-items: center;
+position: relative;
+top:15px;
+right:-15px
+
+}
+.ic3{
+  display:flex;
+  align-items: center;
+  position: relative;
+  top:15px;
+  right:-15px
+}
+.mo {
+  opacity: 100%;
+  position: relative;
+  top:18px;
+}
+.mo1 {
+  opacity: 60%;
+  position: relative;
+  top:-20px
+}
+.mo2{
+  opacity: 60%;
+  position: relative;
+  top:15px
+}
+.mo3{
+  opacity: 60%;
+  position: relative;
+  top:15px
+}
+.mo4{
+  opacity: 60%;
+  position: relative;
+  left:-17px
+}
+.htz  {
+  width: 100px;
+  height: 100%;
+  position: relative;
+  bottom: 7px;
+}
+.head{
+  color: white;;
+  position: relative;
+  right:-38px;
+}
+.head span{
+  color: gold;
+
+}
+.end{
+  width: 100%;
+  height:100px;
+  background-color:black;
+}
+.end span{
+  color: rgba(255, 255, 255, 80%);
+  position: relative;
+  right:-7px;
+}
+.textend{
+  position: relative;
+  bottom:-85px
+}
+
+
